@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="script.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <input type="text" id="first">
+        <input type="text" id="second">
+        <input type="text" id="third">
+    <button onclick="checkSum()" class="onclick">solve</button>
+    <p id="sum"></p>
+    <button onclick="getDate()" class="onclick">Date</button>
+    </div>
+    <img src="octagon.png" id="image" alt="">
+    <button onclick="switchOn()"> start</button>
+    <button onclick="switchOff()">stop </button>
+    <button onclick="pickAnimals()">roll</button>
+<p id="rolled"></p>
+    <script>
+const rolledParagrah = document.getElementById('rolled')
+const animals = ['cat', 'dog', 'rabbit','lion',
+'tiger','monkey','panda','fish']
+animals.push('mice','rat')
+console.log(animals)
+const pickAnimals = function(){
+const rolledAnimals = animals[ (Math.floor(Math.random() * animals.length))]
+console.log(rolledAnimals)
+rolledParagrah.innerHTML = rolledAnimals
+}
+pickAnimals()
+
+const firstInput = document.getElementById("first")
+const secondInput = document.getElementById("second")
+const thirdInput = document.getElementById("third")
+const image = document.getElementById("image")
+let sumValue = document.getElementById("sum")
+const checkSum = function () {
+    let addition =  Number(firstInput.value) * Number(secondInput.value) / Number(thirdInput.value)
+sumValue.innerHTML = addition
+} ;
+const getDate = function () {
+    let date = Date() 
+sumValue.innerHTML = date
+window.alert(Date)
+} ;
+const switchOn= function() {
+image.src="green flag.png"
+};
+const switchOff= function() {
+image.src="octagon.png"
+};
+    //     const value = document.getElementById("demo");
+    //     const value2 = document.getElementById("check");
+    //     // value2.innerHTML = 3;
+    //     const newValue = Number(value2.innerHTML)
+    //     console.log(newValue);
+
+    //     function show (a,b) {
+    //         const multiply = a * b
+    //         const newMultiplcation = multiply / newValue
+    //         return newMultiplcation;
+    //     };
+    //     value.innerHTML= show(9,2)
+        
+
+    //    const eval = (a,b,c) => {
+    
+    //         return (a*b)/c
+            
+    //     };
+    //     value2.innerHTML= eval(15,15,15)
+    </script>
+</body>
+</html>
